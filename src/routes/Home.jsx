@@ -1,6 +1,6 @@
 import { Box, makeStyles } from '@material-ui/core';
-import NavBar from '../Components/Home/NavBar';
-import Slide from '../Components/Home/Slide';
+import NavBar from '../components/Home/NavBar';
+import Slide from '../components/Home/Slide';
 import React,  { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; // hooks
 import { getProducts  } from '../redux/actions/productActions';

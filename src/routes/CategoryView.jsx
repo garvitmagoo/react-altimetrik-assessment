@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import {  makeStyles, Grid } from "@material-ui/core";
-import CategoryItem from "../Components/Category/CategoryItem";
+import CategoryItem from "../components/Category/CategoryItem";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'; // hooks
 import { getProducts as listProducts } from '../redux/actions/productActions';

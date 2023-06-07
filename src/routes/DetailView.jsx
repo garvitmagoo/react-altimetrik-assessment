@@ -1,7 +1,7 @@
 import {  useEffect } from 'react';
 import { Box, Typography, makeStyles, Grid } from '@material-ui/core';
-import ProductDetail from '../Components/Product/ProductDetail';
-import ActionItem from '../Components/Product/ActionItem';
+import ProductDetail from '../components/Product/ProductDetail';
+import ActionItem from '../components/Product/ActionItem';
 import { useParams } from 'react-router-dom';
 import { getProductDetails } from '../redux/actions/productActions';
 import { useSelector, useDispatch } from 'react-redux';

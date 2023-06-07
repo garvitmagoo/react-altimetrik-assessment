@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import NotFound from './routes/NotFound';
-import Header from './Components/Header/Header';
+import Header from './components/Header/Header';
 import DetailView from './routes/DetailView';
 //import TemplateProvider from './templates/TemplateProvider';
 import Cart from './routes/Cart';

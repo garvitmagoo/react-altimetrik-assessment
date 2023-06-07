@@ -1,18 +1,20 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import EmptyCart from "./EmptyCart";
+import Search from "./Search";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from '../../redux/store';
   
-describe("Components/Cart/EmptyCart", () => {
+describe("components/Header/Search", () => {
   //let store;
+ 
+test("renders Search item", () => {
 
-test("renders cart item", () => {
+
   render(
     <Provider store={store}>
       <BrowserRouter>
-        <EmptyCart />
+        <Search />
       </BrowserRouter>
     </Provider>
   );

@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store";
 
-describe("Components/Cart/CategoryItem", () => {
+describe("Components/Category/CategoryItem", () => {
   //let store;
 
   const props = {
@@ -19,7 +19,7 @@ describe("Components/Cart/CategoryItem", () => {
    
   };
 
-  test("renders cart item", () => {
+  test("renders Category item", () => {
     render(
       <Provider store={store}>
         <BrowserRouter>

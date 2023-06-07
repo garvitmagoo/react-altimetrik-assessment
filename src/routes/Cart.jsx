@@ -1,10 +1,10 @@
 import { Box, makeStyles, Typography, Grid } from '@material-ui/core';
-import CartItem from '../Components/Cart/CartItem';
+import CartItem from '../components/Cart/CartItem';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../redux/actions/cartActions';
-import TotalView from '../Components/Cart/TotalView';
-import EmptyCart from '../Components/Cart/EmptyCart';
+import TotalView from '../components/Cart/TotalView';
+import EmptyCart from '../components/Cart/EmptyCart';
 
 const useStyle = makeStyles(theme => ({
     component: {

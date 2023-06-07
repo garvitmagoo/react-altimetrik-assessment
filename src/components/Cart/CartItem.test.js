@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from '../../redux/store';
   
-describe("Components/Cart/CartItems", () => {
+describe("components/Cart/CartItems", () => {
   //let store;
 
     //const initialState = {};
