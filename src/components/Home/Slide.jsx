@@ -1,7 +1,6 @@
 import { Box, Typography, makeStyles, Button, Divider } from '@material-ui/core';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import Countdown from 'react-countdown';
 import { Link } from 'react-router-dom';
 import { Text } from '../../context/Language';
 

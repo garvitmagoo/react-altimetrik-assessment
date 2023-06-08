@@ -9,3 +9,4 @@ export const GET_CATEGORY_DETAILS_SUCCESS = 'getCategorytDetailSuccess'
 export const GET_CATEGORY_DETAILS_FAIL = 'getCategoryDetailFail'
 export const GET_PRODUCT_DETAILS_FAIL = 'getProductDetailFail'
 export const GET_PRODUCT_DETAILS_RESET = 'getProductDetailReset'
+export const GET_BASE_URL = process.env.REACT_APP_BASEURL

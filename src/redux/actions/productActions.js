@@ -4,10 +4,10 @@ import axios from 'axios';
 export const getProducts = (category) => async (dispatch) => {
     try {
         if(!category){
-            const  {data}  = await axios.get(`https://dummyjson.com/products`);
+            const  {data}  = await axios.get(`${actionTypes.GET_BASE_URL}/products`);
             dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
         } else{
-            const  {data}  = await axios.get(`https://dummyjson.com/products/category/${category}`);
+            const  {data}  = await axios.get(`${actionTypes.GET_BASE_URL}/products/category/${category}`);
             dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
         
         }
@@ -19,7 +19,7 @@ export const getProducts = (category) => async (dispatch) => {
 
 export const getCategoryDetails = () => async (dispatch) => {
     try {
-        const  {data} = await axios.get(`https://dummyjson.com/products/categories`);
+        const  {data} = await axios.get(`${actionTypes.GET_BASE_URL}/products/categories`);
         dispatch({ type: actionTypes.GET_CATEGORY_DETAILS_SUCCESS, payload: data });
 
     } catch (error) {
@@ -31,7 +31,7 @@ export const getCategoryDetails = () => async (dispatch) => {
 export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: actionTypes.GET_PRODUCT_DETAILS_REQUEST });
-        const  {data} = await axios.get(`https://dummyjson.com/products/${id}`);
+        const  {data} = await axios.get(`${actionTypes.GET_BASE_URL}/products/${id}`);
       
         dispatch({ type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS, payload: data });
 
