@@ -65,24 +65,15 @@ const useStyle = makeStyles(theme => ({
     
 }));
 
-const MultiSlide = ({ data, timer, title }) => {
+const MultiSlide = ({ data, title }) => {
     const classes = useStyle();
-    const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
-
-    const renderer = ({ hours, minutes, seconds }) => {
-        return <span className={classes.timer}>{hours} : {minutes} : {seconds}  Left</span>;
-    };
+   
     
     return (
         <Box className={classes.component}>
             <Box className={classes.deal}>
                 <Typography className={classes.dealText}><Text tid={title} /></Typography>
-                {
-                    timer && <Box className={classes.timer}>
-                                <img src={timerURL} style={{ width: 24 }} alt='time clock' />
-                                <Countdown date={Date.now() + 5.04e+7} renderer={renderer} />
-                        </Box>
-                }
+                
                  <Link className={classes.button} key={'all'} to={`/products/category/all`} style={{textDecoration: 'none'}}>
                     <Button variant="contained" color="primary" className={classes.button}><Text tid={'View All'} /></Button>
                 </Link>

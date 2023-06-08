@@ -38,19 +38,18 @@ const useStyle = makeStyles(theme => ({
 const ActionItem = ({ product }) => {
     const classes = useStyle();
     const history = useHistory();
-    const { id } = product;
         
     const dispatch = useDispatch();
 
-    const addItemToCart = () => {
-        dispatch(addToCart(id, 1));
+    const addItemToCart = (product) => {
+        dispatch(addToCart(product, 1));
         history.push('/cart');
     }
 
     return (
         <Box className={classes.leftContainer}>
             <img src={product && product.thumbnail  ? product.thumbnail : ''} className={classes.productImage} alt="" /><br />
-            <Button onClick={() => addItemToCart()} className={clsx(classes.button, classes.addToCart)} style={{marginRight: 10}} variant="contained"><Cart />Add to Cart</Button>
+            <Button onClick={() => addItemToCart(product)} className={clsx(classes.button, classes.addToCart)} style={{marginRight: 10}} variant="contained"><Cart />Add to Cart</Button>
             {/* <Button onClick={() => buyNow()} className={clsx(classes.button, classes.buyNow)} variant="contained"><Flash /> Buy Now</Button> */}
         </Box>
     )

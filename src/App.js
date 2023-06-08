@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import NotFound from './routes/NotFound';
 import Header from './components/Header/Header';
-import DetailView from './routes/DetailView';
+import DetailView from './routes/ProductDetailView';
 //import TemplateProvider from './templates/TemplateProvider';
 import Cart from './routes/Cart';
 import { Box } from '@material-ui/core'

@@ -16,28 +16,27 @@ const GroupedButton = ({item}) => {
     const classes = useStyle();
     const dispatch= useDispatch()
     const [ counter, setCounter ] = useState(item.cartQuantity);
-    const handleIncrement = (id) => {
+   
+    const handleIncrement = (item) => {
         setCounter(counter => counter + 1 );
-        dispatch(incrementCart(id,1))
+        dispatch(incrementCart(item,1))
     };
 
-    const handleDecrement = (id) => {
+    const handleDecrement = (item) => {
         if(counter === 1){
-           dispatch(removeFromCart(id));
+           dispatch(removeFromCart(item.id));
         } else{
-            dispatch(decrementCart(id,1))
-    
+            dispatch(decrementCart(item,1))
+            setCounter(counter => counter - 1 );
         }
         
-        setCounter(counter => counter - 1 );
-    
     };
 
     return (
         <ButtonGroup key={item.id} className={classes.component} >
-            <Button className={classes.button} onClick={() => handleDecrement(item.id)} disabled={counter === 0}>-</Button>
+            <Button className={classes.button} onClick={() => handleDecrement(item)} >-</Button>
             <Button disabled>{counter}</Button>
-            <Button className={classes.button} onClick={() => handleIncrement(item.id)}>+</Button>
+            <Button className={classes.button} onClick={() => handleIncrement(item)}>+</Button>
         </ButtonGroup>
     );
 }

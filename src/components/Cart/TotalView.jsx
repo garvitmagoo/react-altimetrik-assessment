@@ -46,7 +46,7 @@ const TotalView = ({ cartItems }) => {
           (item.price * item.cartQuantity * (100 - item.discountPercentage)) /
             100
       );
-      return price, discount;
+      return [price, discount];
     });
     setPrice(price);
     setDiscount(discount);

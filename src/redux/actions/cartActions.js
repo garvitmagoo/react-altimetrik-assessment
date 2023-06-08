@@ -1,33 +1,27 @@
 import * as actionTypes from '../constants/cartConstants';
-import axios from 'axios';
 
-export const addToCart = (id, quantity) => async (dispatch, getState) => {
+export const addToCart = (product, quantity) => async (dispatch, getState) => {
     try { 
-        const { data } = await axios.get(`https://dummyjson.com/products/${id}`);
-
-        dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data, quantity } });
+        dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...product, quantity } });
 
         localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
     } catch (error) {
     }
 };
 
-export const incrementCart = (id, quantity) => async (dispatch, getState) => {
+export const incrementCart = (product, quantity) => async (dispatch, getState) => {
     try { 
-        const { data } = await axios.get(`https://dummyjson.com/products/${id}`);
-
-        dispatch({ type: actionTypes.INCREMENT_CART, payload: { ...data, quantity } });
+        dispatch({ type: actionTypes.INCREMENT_CART, payload: { ...product, quantity } });
        localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
     } catch (error) {
         console.log('Error while calling cart API');
     }
 };
 
-export const decrementCart = (id, quantity) => async (dispatch, getState) => {
+export const decrementCart = (product, quantity) => async (dispatch, getState) => {
     try { 
-        const { data } = await axios.get(`https://dummyjson.com/products/${id}`);
-
-        dispatch({ type: actionTypes.DECREMENT_CART, payload: { ...data, quantity } });
+      
+        dispatch({ type: actionTypes.DECREMENT_CART, payload: { ...product, quantity } });
         localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
    
     } catch (error) {
