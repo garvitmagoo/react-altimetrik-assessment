@@ -74,7 +74,7 @@ const CategoryView = () => {
       <div>
         <div className={classes.label}>
           <Text tid={"Categories"} /> :
-          <select onChange={handleCategoryChange} value={"all"}>
+          <select  data-testid="select" onChange={handleCategoryChange} value={"all"}>
             <option key="Select" value="all">
               Select
             </option>

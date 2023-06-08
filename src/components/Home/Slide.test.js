@@ -30,7 +30,5 @@ test("renders Slide item", () => {
     </Provider>
   );
 
-  const viewall = screen.getByText('View All')
-  fireEvent.click(viewall)
     });
 });

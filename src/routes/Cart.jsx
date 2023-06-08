@@ -43,7 +43,7 @@ const useStyle = makeStyles(theme => ({
     }
 }));
 
-const Cart = ({ match, history }) => {
+const Cart = ({ match }) => {
     const classes = useStyle();
 
     const cartDetails = useSelector(state => state.cart);
