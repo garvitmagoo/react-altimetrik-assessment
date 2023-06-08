@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 55,
     background: "#F2F2F2",
   },
+  label: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
   heading:{
     padding: '25px',
     textTransform: 'capitalize'
@@ -60,12 +64,15 @@ const CategoryView = () => {
   }, [dispatch, category])
 
   const getProducts = useSelector(state => state.getProducts);
-  const { products} = getProducts;
+  const { products, error} = getProducts;
     
   return (
     <div>
       <h1 className={classes.heading}>{category && category === 'all' ? 'Products' : category}</h1>
-      <div className={classes.label}><Text tid={'Categories'} />  : </div>  
+      {error && error.data ? 'There was a error fetching the request. Pleae try again later' : 
+      <div>
+      <div className={classes.label}><Text tid={'Categories'} />  :   
+                
           <select onChange={handleCategoryChange} value={'all'}>
            <option key='Select' value='all'>Select</option>
             {categories.map((temp) => (
@@ -74,9 +81,13 @@ const CategoryView = () => {
               </option>
             ))}
           </select>
+
+          </div>
         <Grid container className={classes.container}>
           {products && products.length > 0 ? <CategoryItem products={products} /> : 'No Products in this category'}
         </Grid>
+              </div>
+}
     </div>
   );
 };

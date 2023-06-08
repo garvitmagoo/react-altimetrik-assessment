@@ -17,24 +17,25 @@ const Home = () => {
     const classes = useStyle();
 
     const getAllProducts = useSelector(state => state.getProducts);
-    const { products} = getAllProducts;
+   // console.log(getAllProducts)
+    const { products, error} = getAllProducts;
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
 
     return (
         <> 
-            <NavBar products={products} />
+            <NavBar />
             <Box className={classes.component}>
+                {error && error.data ? 'There was a error fetching the request. Pleae try again later' : 
                  <Slide
                     data={products} 
                     title='Products'
                     timer={false} 
                     multi={true} 
                 />
-                
+    }
             </Box>
         </>
     )

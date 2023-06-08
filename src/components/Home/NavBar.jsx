@@ -32,7 +32,7 @@ const useStyle = makeStyles(theme => ({
     }
 }));
 
-const NavBar = ({products}) => {
+const NavBar = () => {
     const classes = useStyle();
     
     const getCategories = useSelector(state => state.getCategory);
