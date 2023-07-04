@@ -33,7 +33,6 @@ const CustomButtons = () => {
   const handleLanguageChange = (e) => userLanguageChange(e.target.value);
 
   const cartDetails = useSelector((state) => state.cart);
-  console.log(cartDetails)
   const { cartItems } = cartDetails;
   let total = 0;
   cartItems.map((item)=>{

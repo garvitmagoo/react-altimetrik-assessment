@@ -17,6 +17,13 @@ test("renders Header item", () => {
     </Provider>
   );
 
-});
+  const openButton = screen.getByTestId('menuButton');
+  fireEvent.click(openButton)
+
+  const closeButton = screen.getByTestId('closeButton');
+  fireEvent.click(closeButton)
+   
+
+  });
 
 });

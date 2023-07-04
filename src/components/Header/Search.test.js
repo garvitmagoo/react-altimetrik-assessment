@@ -19,6 +19,11 @@ test("renders Search item", () => {
     </Provider>
   );
 
+  const nameInputEl = screen.getByPlaceholderText("Search for products, brands and more");
+  fireEvent.change(nameInputEl, {
+    target: { value: "Fog" },
+    })
+
 });
 
 });

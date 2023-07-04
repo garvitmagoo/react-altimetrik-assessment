@@ -28,5 +28,9 @@ describe("Components/Product/ActionItem", () => {
       </Provider>
     );
 
+    const addtocart = screen.getByText('Add to Cart')
+    fireEvent.click(addtocart)
+
+
   });
 });

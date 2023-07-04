@@ -82,12 +82,13 @@ const Header = () => {
                 <IconButton
                     color="inherit"
                     className={classes.menuButton}
+                    data-testid="menuButton"
                     onClick={handleOpen}
                 >
                     <Menu />
                 </IconButton>
 
-                <Drawer open={open} onClose={handleClose}>
+                <Drawer open={open} data-testid="closeButton" onClose={handleClose}>
                     {list()}
                 </Drawer>
 
